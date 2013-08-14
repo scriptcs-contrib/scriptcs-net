@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd"> 
+  <metadata> 
+    <id>ScriptCs.Net</id> 
+    <version>0.2</version> 
+    <authors>Damian Schenkelman</authors>
+    <description>A lightweight script pack that can be used to create TCP servers and clients.</description> 
+    <language>en-US</language>
+    <licenseUrl>https://github.com/dschenkelman/scriptcs-net/blob/dev/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/dschenkelman/scriptcs-net</projectUrl>
+    <dependencies>
+      <dependency id="ScriptCs.Contracts" version="0.4.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="net45" />
+    </frameworkAssemblies>
+  </metadata> 
+  <files>
+    <file src="..\src\ScriptCs.Net\bin\Debug\*.dll" target="lib\net45" />
+  </files>
+</package>
