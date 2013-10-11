@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd"> 
   <metadata> 
     <id>ScriptCs.Net</id> 
-    <version>0.2.1</version> 
+    <version>0.2.2</version> 
     <authors>Damian Schenkelman</authors>
     <description>A lightweight script pack that can be used to create TCP servers and clients.</description> 
     <language>en-US</language>
