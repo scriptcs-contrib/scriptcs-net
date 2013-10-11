@@ -56,6 +56,16 @@
                     this.onClose.Invoke();
                 }
             }
+            catch (ObjectDisposedException)
+            {
+                if (!this.cts.IsCancellationRequested)
+                {
+                    throw;
+                }
+                
+                // otherwise, the error is expected since the socket is closed
+                // source: http://social.msdn.microsoft.com/Forums/vstudio/en-US/588d25b5-75df-483b-a658-7da9cb547b69/cancel-beginread?forum=netfxbcl
+            } 
             catch (Exception e)
             {
                 if (this.onError == null)
@@ -93,12 +103,12 @@
             this.cts.Token.Register(
                 () =>
                 {
+                    this.socket.Close();
+
                     if (this.stream != null)
                     {
                         this.stream.Close();
                     }
-
-                    this.socket.Close();
                 });
 
             this.cts.Cancel();
